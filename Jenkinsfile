@@ -5,11 +5,11 @@ pipeline{
 	    stage('gitclone') {
 
 			steps {
-				git 'https://github.com/mahendra1904/jenkinsCICD.git'
+				git branch: 'stag', credentialsId: 'githubid', url: 'https://github.com/mahendra1904/jenkinsCICD.git'
+                
 			}
 		}
 			
 	}
 	
 }
-

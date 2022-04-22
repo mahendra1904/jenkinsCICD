@@ -1,7 +1,7 @@
 properties([parameters([choice(choices: ['main', 'master', 'stag', 'dev', 'prod'], description: 'select any branch and accordingly the pipeline will trigger.', name: 'select branch')])])
 node{
     stage('scm checkout'){
-        echo 'polling code form the branch ${params.branch}'
-        git url: 'https://github.com/mahendra1904/jenkinsCICD.git',branch: '${params.branch}'
+        git branch: '${params.branch}', credentialsId: 'githubid', url: 'https://github.com/mahendra1904/jenkinsCICD.git'
     }
+
 }
